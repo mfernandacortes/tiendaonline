@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo_principal %}Listado de remeras{% endblock %}
+{% block principal %}
+<table class="tabla-mostrar">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Talle</th>
+            <th>Color</th>
+            <th>Lisa?</th>
+            <th>Género</th>
+        </tr>
+    </thead>
+    {% for remera in remeras %}
+        <tr>
+            <td>{{ remera.marca }}</td>
+            <td>{{ remera.talle }}</td>
+            <td>{{ remera.color }}</td>
+            {% if remera.lisa %}
+                <td>SI</td>
+            {% else  %} 
+                <td>NO</td>
+            {% endif %}
+            
+
+
+            {% if remera.genero == 1 %}
+                <td>HOMBRE</td>
+            {% else %} 
+                {% if remera.genero == 2 %}
+                    <td>MUJER</td>
+                {% else %}
+                    <td>UNISEX</td>
+                {% endif %}
+            {% endif %}
+
+           
+        </tr>
+
+    {% endfor %}
+
+</table>
+{% endblock %}

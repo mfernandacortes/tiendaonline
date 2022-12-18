@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <title>{% block titulo %}Tienda online Indumentaria{% endblock %}</title>
+    </head>
+    <body>
+        <img src="{% static 'images/logo.png' %}" />
+        <h1>{% block titulo_principal %}{% endblock %}</h1>
+        <h4>{% block titulo_secundario %}{% endblock %}</h4>
+        {% block principal %}{% endblock %}
+        <footer>
+            <small>&copy; Tienda online de indumentaria  V1.  </small>
+        </footer>
+    </body>
+</html>

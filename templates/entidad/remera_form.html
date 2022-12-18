@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo_principal %}Ingreso/Modificación de remeras{% endblock %}
+{% block principal %}
+    <form method="post">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <br>
+       <input type="submit" value="Grabar">
+    </form>
+  
+{% endblock %}
