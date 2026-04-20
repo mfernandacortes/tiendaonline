@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block titulo_principal %}Listado de remeras{% endblock %}
+{% block principal %}
+    <div>
+       <p>Marca: {{ remera.marca }}</p> 
+       <p>Talle: {{ remera.talle }}</p>
+       <p>Color: {{ remera.color }}</p>
+       
+    </div>
+{% endblock %}

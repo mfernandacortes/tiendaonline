@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <title>{% block titulo %}Tienda online Indumentaria{% endblock %}</title>
+    </head>
+    <body>
+        <img src="{% static 'images/logo.png' %}" />
+
+        <!--  MENÚ -->
+        <!--nav>
+            <a href="/">Inicio</a> |
+            <a href="/shop">Shop</a> |
+            <a href="/remeras">Remeras</a> |
+            <a href="/nueva_remera">Nueva remera</a> |
+            <a href="/contacto">Contacto</a> |
+            <a href="/admin">Admin</a>
+        </nav-->
+        <nav style="background:#222; padding:15px;">
+            <a href="/" style="color:white; margin-right:15px; text-decoration:none;">Inicio</a>
+            <a href="/shop" style="color:white; margin-right:15px; text-decoration:none;">Shop</a>
+            <a href="/remeras" style="color:white; margin-right:15px; text-decoration:none;">Remeras</a>
+            <a href="/nueva_remera" style="color:white; margin-right:15px; text-decoration:none;">Nueva</a>
+            <a href="/contacto" style="color:white; margin-right:15px; text-decoration:none;">Contacto</a>
+            <a href="/admin" style="color:#00d4ff; text-decoration:none;">Admin</a>
+        </nav>
+        <hr>
+
+        <h1>{% block titulo_principal %}{% endblock %}</h1>
+        <h4>{% block titulo_secundario %}{% endblock %}</h4>
+
+        {% block principal %}{% endblock %}
+
+        <footer>
+            <small>&copy; Tienda online de indumentaria V1.</small>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+body {
+    background-color: #f0f4f8;
+    font-family: Arial, sans-serif;
+}
+
+.tabla-mostrar {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tabla-mostrar th {
+    background-color: #2c3e50;
+    color: white;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.tabla-mostrar td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    font-size: 14px;
+}
+
+.tabla-mostrar tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-mostrar tr:hover td {
+    background-color: #f8f9fa;
+}
+
+/* Botón Ver */
+.tabla-mostrar a {
+    text-decoration: none;
+    color: #2c3e50;
+    border: 1px solid #2c3e50;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: all 0.2s;
+}
+
+.tabla-mostrar a:hover {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Badges Sí / No */
+.badge-si {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.badge-no {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* Mensaje tabla vacía */
+.tabla-vacia {
+    text-align: center;
+    color: #999;
+    padding: 24px;
+    font-style: italic;
+}

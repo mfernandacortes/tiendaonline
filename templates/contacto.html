@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo_principal %} 
+Formulario de contacto 
+{% endblock %}
+
+{% block principal %}
+
+<p>Dirección: Av. Le Vayer 1234</p>
+<p>Teléfono: +541156714322</p>
+<p>Email: contacto@indumentaria-online.com</p>
+
+<hr>
+
+{% if mensaje_exito %}
+    <p style="color:green;">{{ mensaje_exito }}</p>
+{% endif %}
+
+<h3>Enviar mensaje</h3>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" name="email" required><br><br>
+
+    <label>Mensaje:</label><br>
+    <textarea name="mensaje" rows="4" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+</form>
+
+<br>
+
+<h4><a href="{% url 'index' %}">Volver a inicio</a></h4>
+
+{% endblock %}

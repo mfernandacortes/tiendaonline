@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo_principal %}
+Shop
+{% endblock %}
+
+{% block principal %}
+
+<div class="contenedor-shop">
+
+    {% for remera in remeras %}
+        <div class="card-remera">
+            <h3>{{ remera.marca }}</h3>
+            <p>Talle: {{ remera.talle }}</p>
+            <p>Color: {{ remera.color }}</p>
+            <p>{{ remera.lisa|yesno:"Liso,Estampado" }}</p>
+
+            <a href="/remera/{{ remera.id }}">Ver detalle</a>
+        </div>
+    {% empty %}
+        <p>No hay productos disponibles</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

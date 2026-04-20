@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block titulo_principal %}
+Listado de remeras
+{% endblock %}
+
+{% block principal %}
+
+<table class="tabla-mostrar">
+    <thead>
+        <tr>
+            <th>Marca</th>
+            <th>Talle</th>
+            <th>Color</th>
+            <th>Lisa?</th>
+            <th>Género</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for remera in remeras %}
+        <tr>
+            <td>{{ remera.marca }}</td>
+            <td>{{ remera.talle }}</td>
+            <td>{{ remera.color }}</td>
+
+            <!-- ✔ más limpio -->
+            <td>{{ remera.lisa|yesno:"SI,NO" }}</td>
+
+            <!-- ✔ lógica simplificada -->
+            <td>
+                {% if remera.genero == 1 %}
+                    HOMBRE
+                {% elif remera.genero == 2 %}
+                    MUJER
+                {% else %}
+                    UNISEX
+                {% endif %}
+            </td>
+
+            <!-- ✔ acción -->
+            <td>
+                <a href="/remera/{{ remera.id }}">Ver</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No hay remeras cargadas</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
